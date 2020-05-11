@@ -8,8 +8,8 @@ before_install:
 
 bundler_args: --retry 5
     
-script:
-    - docker run -e CI=true burntisland-app-co/default npm test
+# script:
+#     - docker run -e CI=true burntisland-app-co/default npm test
 
 deploy:
   provider: elasticbeanstalk
