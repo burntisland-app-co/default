@@ -1,0 +1,22 @@
+language: generic
+sudo: required
+services:
+    - docker
+
+before_install:
+    - docker build -t bubionbreakfast/default-app -f Dockerfile.dev .    
+
+script:
+    - docker run -e CI=true bubionbreakfast/default-app npm run test -- --coverage   
+
+deploy:
+  provider: elasticbeanstalk
+  region: "eu-west-2"
+  app: "default"
+  env: "Default-env"
+  bucket_name: "elasticbeanstalk-eu-west-2-890785154437"
+  bucket_path: "default"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
