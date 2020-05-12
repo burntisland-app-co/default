@@ -6,7 +6,7 @@ services:
 before_install:
     - docker build -t  burntisland-app-co/default -f Dockerfile.dev .    
 
-bundler_args: --retry 5
+#bundler_args: --retry 5
     
 # script:
 #     - docker run -e CI=true burntisland-app-co/default npm test
