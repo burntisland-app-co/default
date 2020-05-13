@@ -8,7 +8,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          felix default public!
+          felix default public NEW npm stuff!
         </p>
         <a
           className="App-link"
